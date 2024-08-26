@@ -171,6 +171,8 @@ h1 {
 
 .habbit__form {
     position: relative;
+    display: flex;
+    gap: 15px;
 }
 
 .input__icon {
