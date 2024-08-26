@@ -30,7 +30,39 @@
                 <button class="menu__add"><img src="images/Add.svg" alt="Добавить привычку"></button>
             </nav>
         </div>
-        <div class="content"></div>
+        <div class="content">
+            <header>
+                <h1>Отжимания</h1>
+                <div class="progress">
+                    <div class="progress__text">
+                        <div class="progress__name">Прогресс</div>
+                        <div class="progress__percent">80%</div>
+                    </div>
+                    <div class="progress__bar">
+                        <div class="progress__cover-bar"></div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="habbits">
+                    <div class="habbit">
+                        <div class="habbit__day">День 1</div>
+                        <div class="habbit__comment">Первый подход всегда даётся тяжело</div>
+                        <button class="habbit__delete">
+                            <img src="images/delete.svg" alt="удалить">
+                        </button>
+                    </div>
+                    <div class="habbit">
+                        <div class="habbit__day">День 2</div>
+                        <form class="habbit__form">
+                            <input class="input-icon" type="text" placeholder="Комментарий">
+                            <img class="input__icon" src="images/comment.svg" alt="Иконка комментария">
+                        </form>
+                        <button>Готово</button>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
     <script src="scripts/app.js"></script>
 </body>
