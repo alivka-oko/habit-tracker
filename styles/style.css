@@ -46,6 +46,7 @@ body {
     border-radius: 14px;
     border: none;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .menu__add {
@@ -123,11 +124,18 @@ h1 {
 }
 
 .progress__cover-bar {
-    width: 80%;
+    /* width: 80%; */
+    transition: all 0.5s;
     height: 5px;
 
     background: #5051F9;
     border-radius: 4px;
+}
+
+#days {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .habbits {
@@ -196,6 +204,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 }
 
 .habbit__delete:hover {
@@ -214,7 +223,11 @@ input {
     outline: none;
 }
 
-button {
+input.error {
+    border: 1px solid red;
+}
+
+.button {
     font-family: 'comfortaa';
     font-size: 13px;
     width: 100%;
@@ -225,9 +238,10 @@ button {
     border: none;
     border-radius: 9px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-button:hover {
+.button:hover {
     background: #c6c4f7;
 }
 
