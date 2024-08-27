@@ -38,7 +38,6 @@ function saveData() {
 function rerenderMenu(activeHabbit) {
 
     for (const habbit of habbits) {
-        console.log(habbits)
         const existed = document.querySelector(`[menu-habbit-id="${habbit.id}"]`);
         if (!existed) {
             const element = document.createElement('button');
@@ -75,14 +74,14 @@ function rerenderHead(activeHabbit) {
 
 function rerenderContent(activeHabbit) {
     page.content.daysContainer.innerHTML = '';
-    for (const daysKey in activeHabbit.days) {
+    for (const dayIndex in activeHabbit.days) {
         const element = document.createElement('div');
         element.classList.add('habbit');
         element.innerHTML = `
-                        <div class="habbit__day">День ${Number(daysKey) + 1}</div>
-                        <div class="habbit__comment">${activeHabbit.days[daysKey].comment}</div>
-                        <button class="habbit__delete">
-                            <img src="images/delete.svg" alt="Удалить день ${Number(daysKey) + 1}">
+                        <div class="habbit__day">День ${Number(dayIndex) + 1}</div>
+                        <div class="habbit__comment">${activeHabbit.days[dayIndex].comment}</div>
+                        <button class="habbit__delete" onclick="deleteDay(${Number(dayIndex)})">
+                            <img src="images/delete.svg" alt="Удалить день ${Number(dayIndex) + 1}">
                         </button>`;
         page.content.daysContainer.appendChild(element)
     }
@@ -128,6 +127,22 @@ function addDays(event) {
     rerender(Number(globalActiveHabbitId))
     saveData()
 
+}
+
+function deleteDay(index) {
+    const currentDays = habbits.find(habbit => habbit.id === globalActiveHabbitId).days
+    currentDays.splice(index, 1)
+    habbits = habbits.map(habbit => {
+        if (habbit.id === globalActiveHabbitId) {
+            return {
+                ...habbit,
+                days: currentDays
+            }
+        }
+        return habbit;
+    });
+    rerender(Number(globalActiveHabbitId))
+    saveData()
 }
 
 /* init */
