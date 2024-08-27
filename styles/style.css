@@ -78,6 +78,9 @@ body {
 .content {
     flex-grow: 1;
     padding: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 header {
@@ -85,6 +88,7 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 70%;
+    gap: 20px;
 }
 
 .progress__text {
@@ -166,6 +170,7 @@ h1 {
     border-right: 1px solid #E7EBFB;
     height: 100%;
     padding: 15px;
+    min-width: 130px;
 
     display: flex;
     justify-content: center;
@@ -247,4 +252,90 @@ input.error {
 
 .input-icon::before {
     content: 'dasd';
+}
+
+.cover {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-hidden {
+    display: none;
+}
+
+.popup {
+    position: relative;
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 18px 0;
+    min-width: 380px;
+    align-items: center;
+}
+
+.popup__form input {
+    padding: 10px 20px;
+}
+
+.icon-select {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 0;
+}
+
+.icon {
+    background: transparent;
+    border: 1px solid #5051F9;
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icon-active {
+    background: #5051F9;
+}
+
+.icon:hover {
+    background-color: #6A6AFB;
+}
+
+.icon-active img,
+.icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.close-popup {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 27px;
+}
+
+.icon-label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #768396;
 }
