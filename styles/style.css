@@ -88,7 +88,6 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 70%;
-    gap: 20px;
 }
 
 .progress__text {
@@ -338,4 +337,12 @@ h2 {
     font-size: 14px;
     line-height: 16px;
     color: #768396;
+}
+
+button.delete {
+    margin-right: auto;
+    background: transparent;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
 }

@@ -25,6 +25,8 @@
         <div class="content">
             <header class="header">
                 <h1 class="h1">-</h1>
+                <button class="delete" onclick="deleteHabbitById()"><img src="images/delete.svg"
+                        alt="Удалить привычку"></button>
                 <div class="progress">
                     <div class="progress__text">
                         <div class="progress__name">Прогресс</div>
@@ -59,10 +61,10 @@
                         <img src="images/sport.svg" alt="Спорт">
                     </button>
                     <button class="icon" onclick="setIcon(this,'water')">
-                        <img src="images/Water.svg" alt="Вода">
+                        <img src="images/water.svg" alt="Вода">
                     </button>
                     <button class="icon" onclick="setIcon(this,'food')">
-                        <img src="images/Food.svg" alt="Еда">
+                        <img src="images/food.svg" alt="Еда">
                     </button>
                 </div>
                 <form class="popup__form" onsubmit="addHabbit(event)">

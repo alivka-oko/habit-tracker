@@ -26,7 +26,8 @@ const page = {
         header: document.querySelector('.header'),
         h1: document.querySelector('.h1'),
         progressPercent: document.querySelector('.progress__percent'),
-        progressCoverBar: document.querySelector('.progress__cover-bar')
+        progressCoverBar: document.querySelector('.progress__cover-bar'),
+        deleteButton: document.querySelector('button.delete')
     },
     content: {
         daysContainer: document.getElementById('days'),
@@ -99,6 +100,13 @@ function resetForm(form, fields) {
 /* render */
 
 function rerenderMenu(activeHabbit) {
+    const habbitsButtons = page.menu.list.querySelectorAll('button')
+    for (const habbitButton of habbitsButtons) {
+        const habbitButtonId = Number(habbitButton.getAttribute('menu-habbit-id'))
+        if (habbits.find(habbit => habbit.id == habbitButtonId) === undefined) {
+            habbitButton.remove()
+        }
+    }
 
     for (const habbit of habbits) {
         const existed = document.querySelector(`[menu-habbit-id="${habbit.id}"]`);
@@ -122,6 +130,8 @@ function rerenderMenu(activeHabbit) {
             existed.classList.remove('menu__item-active')
         }
     }
+    //пройтись по всем айди привычек и элементов, если не найдется пара у элементов - удалить
+
 }
 
 function rerenderHead(activeHabbit) {
@@ -133,6 +143,16 @@ function rerenderHead(activeHabbit) {
 
     page.header.progressPercent.innerText = progress.toFixed(0) + '%';
     page.header.progressCoverBar.style.width = progress.toFixed(0) + '%';
+}
+
+function deleteHabbitById() {
+    if (habbits.length === 1) {
+        return
+    }
+    habbits = habbits.filter(habbit => habbit.id !== globalActiveHabbitId)
+    globalActiveHabbitId = habbits[0].id
+    rerender(globalActiveHabbitId)
+    saveData()
 }
 
 function rerenderContent(activeHabbit) {
