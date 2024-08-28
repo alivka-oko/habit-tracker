@@ -81,13 +81,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    max-width: 70%;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 70%;
+    gap: 5px;
 }
 
 .progress__text {
@@ -100,7 +102,6 @@ h1 {
     font-weight: 400;
     font-size: 30px;
     line-height: 33px;
-
     color: #000000;
 }
 
@@ -150,7 +151,6 @@ h1 {
 .habbit {
     display: flex;
     justify-content: space-between;
-    max-width: 70%;
     align-items: center;
 
     height: 55px;
@@ -225,6 +225,7 @@ input {
     border-radius: 9px;
     padding: 10px 45px;
     outline: none;
+    padding: 10px 0 10px 45px;
 }
 
 input.error {
@@ -272,6 +273,8 @@ input.error {
     padding: 22px;
     border-radius: 10px;
     text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 .popup__form {
@@ -279,7 +282,7 @@ input.error {
     flex-direction: column;
     gap: 6px;
     margin: 18px 0;
-    min-width: 380px;
+    width: 100%;
     align-items: center;
 }
 
@@ -345,4 +348,111 @@ button.delete {
     border: none;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.habbit__title {
+    display: flex;
+}
+
+.habbit>form {
+    padding: 0 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .progress {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .habbit {
+        flex-direction: column;
+        height: auto;
+        padding-right: 0px;
+        align-items: flex-start;
+    }
+
+    .habbit__day {
+        padding: 10px 0 !important;
+        width: 100%;
+        min-width: auto;
+        border: none;
+    }
+
+    .habbit__delete {
+        align-self: flex-end;
+    }
+
+    .habbit__form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .habbit>form {
+        padding: 0 15px 15px 15px;
+    }
+
+    .button {
+        max-width: none;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .popup {
+        min-width: auto;
+        max-width: 80vw;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .panel {
+        min-height: auto;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+    .menu__list {
+        flex-direction: row;
+        padding: 20px 0;
+    }
+
+    .logo {
+        margin-bottom: 0px;
+        max-width: 30%;
+
+    }
+
 }
