@@ -441,7 +441,7 @@ button.delete {
 
     .menu {
         flex-direction: row;
-        overflow: scroll;
+        overflow-x: auto;
     }
 
     .menu__list {
